@@ -27,7 +27,8 @@ in pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
 
     # Some basics
-    bash git jq cloc plantuml
+    #bash git jq cloc plantuml
+    bash git jq cloc
 
     # Node.js 17 with PNPM package manager.
     nodejs-17_x 
@@ -46,6 +47,7 @@ in pkgs.mkShell {
 
         # Update this variable and the checksums below
         # to download the latest version of secretcli.
+        #version = "1.5.0";
         version = "1.2.2";
 
         # Different download links for different OS.
@@ -55,10 +57,12 @@ in pkgs.mkShell {
           "x86_64-linux" = {
             binary = "secretcli-Linux";
             sha256 = "1p0fhr4avwcmb4p54v05c266v0bzbdlr8gs2b6nrzn94mpfhb56l";
+            #sha256 = "sha256-BYFHX2rkHiECNOT6/p5n4YkIOXOfmkooArnZLMdvXpc=";
           };
           "x86_64-darwin" = {
             binary = "secretcli-macOS";
             sha256 = "sha256-HIBtdFRUddoaYKwqSlToxkmL+vl6an8tsXN4ZlHBIag=";
+            #sha256 = lib.fakeSha256;
           };
         };
 
